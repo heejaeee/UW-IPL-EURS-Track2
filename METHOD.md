@@ -1,6 +1,6 @@
-# UW-IPL — EURS Track2, T1/T1v100 candidates
+# UW-IPL — EURS Track2, T1v100, submission 19405
 
-The final testing submission ID and best candidate await owner confirmation. config.json provisionally selects T1v100. onnx/submitted_model.onnx is the unmodified local artifact designated for that candidate; its association with the precise leaderboard entry must still be confirmed.
+The owner confirmed T1v100, submission #19405 (User #2062), as the final testing model; official Composite is 0.401. config.json selects T1v100. onnx/submitted_model.onnx is the unchanged original T1v100 artifact, SHA-256 95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369. v104/#19412 matched the reported official metrics and was not adopted. The published reproduction therefore retains the T1v100 guided filter (radii 16 and 4, epsilon 0.001).
 
 A frozen StatisticalRestorerV3S v5 predicts mixtures of TRAIN-fitted degradation conditions and image-conditioned color coefficients. A separable luminance unsharp mask (k=0.8) produces restored_image. Segmentation uses the first 15 MobileNetV2 blocks (dilated OS8), LR-ASPP and inherited normalization. T1 evaluates a whole 384×512 image and its horizontal flip with shared weights, then unflips and averages logits. There are no tiles. Two RGB guided-filter stages (r=16 then 4, epsilon=0.001), guided by the post-USM restoration, refine seg_logits. An LDL-transpose covariance solve uses separable box pooling. Static input: 1×3×1024×1024; official compute: 11.43190293 GFLOPs and 0.889754 M initializer parameters.
 

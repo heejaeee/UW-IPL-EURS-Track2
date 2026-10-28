@@ -1,5 +1,5 @@
 team: UW-IPL
 track: eurs-t2
-submission_id: null
-contact: ""
-hardware: "NVIDIA RTX 5080 (development); Jetson (official evaluation)"
+submission_id: 19405
+contact: hkwon4@uw.edu
+hardware: NVIDIA RTX 5080 (development); Jetson (official evaluation)

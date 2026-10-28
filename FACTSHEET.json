@@ -53,7 +53,6 @@
   "testing_hyperparameter_selection": false,
   "online_adaptation": false,
   "cross_image_statistics": false,
-  "public_push_performed": false,
   "track": 2,
   "external_assets": [
     {
@@ -130,8 +129,8 @@
     }
   ],
   "external_list_scope": "Full cross-track lineage inventory; per-item role identifies actual use. Failed experimental backbones are not claimed as deployed components.",
-  "submission_id": null,
-  "selected_candidate": "T1v100 (provisional; best and exact uploaded ID awaiting user)",
+  "submission_id": 19405,
+  "selected_candidate": "T1v100",
   "alternatives": [
     "T1 (v92-3000)",
     "T1v100 (v100-1000)"
@@ -167,5 +166,18 @@
     "source": "contributor restoration_transfer_v5/result.json",
     "note": "Actual supplied v5 file; not the proposed v5b10epoch architecture. Same checkpoint and output as the uploaded T1/T1v100 artifacts."
   },
-  "submitted_model_sha256": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369"
+  "submitted_model_sha256": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369",
+  "contact": "hkwon4@uw.edu",
+  "public_repository": "https://github.com/heejaeee/UW-IPL-EURS-Track2",
+  "submission_user_id": 2062,
+  "official": {
+    "Composite": 0.401,
+    "Qseg": 0.242,
+    "mIoU": 0.422,
+    "F1": 0.574,
+    "PSNR": 21.55,
+    "SSIM": 0.82,
+    "sharpness": 0.959
+  },
+  "selection_note": "Owner confirmed T1v100/#19405. v104/#19412 matched reported metrics and is not adopted."
 }

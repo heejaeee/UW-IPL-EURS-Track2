@@ -4,7 +4,11 @@
     "T1v100": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369"
   },
   "selected": "T1v100",
-  "exact_uploaded_id_confirmation_pending": true,
+  "exact_uploaded_id_confirmation_pending": false,
   "graph_equal_local_torch271": true,
-  "torch24_difference": "one folded reshape initializer name; numerics unchanged; exporter now canonicalizes only that name"
+  "torch24_difference": "one folded reshape initializer name; numerics unchanged; exporter now canonicalizes only that name",
+  "submission_id": 19405,
+  "submission_user_id": 2062,
+  "confirmed_by_owner": true,
+  "submitted_model_sha256": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369"
 }

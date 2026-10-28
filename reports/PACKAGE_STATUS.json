@@ -10,24 +10,33 @@
     "peak_allocated_GiB": 5.597517490386963,
     "requested_torch251_GPU_verified": false,
     "reason": "The local RTX 5080 is unsupported by PyTorch 2.5.1/CUDA 12.4; additional CUDA 12.8 verification is separate.",
-    "static_missing": [
-      "contact email",
-      "weights HTTPS URL"
-    ],
+    "static_missing": [],
     "weights": {
       "filename": "UW-IPL-Track1-19050-weights.tar.gz",
       "sha256": "87497b7a5b854ffb79739267fe29423b06f3addc42c7f46e07970d07f473569c",
       "bytes": 3525648308,
-      "url_pending": true,
-      "contains_licenses": true
+      "url_pending": false,
+      "contains_licenses": true,
+      "url": "https://huggingface.co/hjkwon1996/UW-IPL-EURS-Track1-weights/resolve/main/UW-IPL-Track1-19050-weights.tar.gz",
+      "uploaded_by_owner": true,
+      "download_verified": true,
+      "extraction_verified": true,
+      "verification_report": "reports/hf_weights_verification.json"
     },
-    "static_errors": 2,
-    "static_warnings": 3,
-    "static_warning_explanation": "Upstream optional download functions are not called (local weights and offline run verified). Requirements pin dependencies for the explicitly requested custom Docker image."
+    "static_errors": 0,
+    "static_warnings": 0,
+    "static_warning_explanation": "Resolved by removing optional automatic downloads and separating default-image extras from unchanged custom-Docker runtime pins. Official checker unmodified.",
+    "contact": "hkwon4@uw.edu",
+    "hf_download_verified": true,
+    "hf_extraction_verified": true,
+    "verification_report": "reports/hf_weights_verification.json",
+    "warning_audit": "reports/warning_audit.json",
+    "relocated_offline_cuda128_run5_after_fixes": true,
+    "warning_fixes_run5_pngs_bitexact": true
   },
   "Track2": {
     "directory": "UW-IPL-EURS-Track2-Final",
-    "selected_candidate": "T1v100 (provisional)",
+    "selected_candidate": "T1v100",
     "T1_torch24_offline_export_same_graph_weights": true,
     "T1v100_torch24_offline_export_same_graph_weights": true,
     "params_m": 0.889754,
@@ -39,13 +48,14 @@
       "weights/all_train_fits.jsonl"
     ],
     "weights_link_yaml_present": false,
-    "static_missing": [
-      "confirmed final submission ID",
-      "contact email"
-    ],
+    "static_missing": [],
     "submitted_onnx_sha256": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369",
-    "static_errors": 2,
-    "static_warnings": 0
+    "static_errors": 0,
+    "static_warnings": 0,
+    "submission_id": 19405,
+    "contact": "hkwon4@uw.edu",
+    "owner_confirmed": true,
+    "public_repository": "https://github.com/heejaeee/UW-IPL-EURS-Track2"
   },
   "public_push": false,
   "uploaded": false,
@@ -55,5 +65,6 @@
     "OTHER_recall": 0.25321457715211143,
     "candidate_criteria_passed": true,
     "separate_from_repro_best": true
-  }
+  },
+  "historical_activity_note": "public_push/uploaded flags below refer to the original packaging stage; see the public repository and final clone verification for release status."
 }
