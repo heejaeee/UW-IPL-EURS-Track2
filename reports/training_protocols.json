@@ -1,0 +1,164 @@
+{
+  "runs/track2_k1_fix_v91/protocol.json": {
+    "source": "research/eurs_baseline/runs/track2_recipe_v69/expanded_curriculum/step1000/model.pt",
+    "source_sha256": "efb100ee747e8cc1e390dc28f640efaa8371c5cfdca010297098c7c0475f7996",
+    "steps": 4000,
+    "peak_lr": {
+      "encoder": 1e-06,
+      "head": 1e-05
+    },
+    "warmup": 100,
+    "cosine_end_zero": true,
+    "LR_reference": "50%ofv32 maximum; identical v69 peaks, new4000step cosine horizon with zero floor",
+    "seed": 43,
+    "batch": "12 original v69 slots +2 independent geometry-aligned cachedKD slots; GT slots never displaced",
+    "original_recipe": "research/eurs_baseline/train_track2_recipe_v69.py",
+    "original_recipe_sha256": "aaf77dfb3f7c10b7a3d3650dc035193951887e98759b508f7e9cbeedc677f31a",
+    "geometry": "alternating whole384x512/tile192x280 branch supervision; scale.5-1.5; no fused loss/no guided-filter backward",
+    "preservation": "v69 background/coral/negative/anchor losses, original completion rare-biased sampling and rareKD2x, 1364new-scene first800step curriculum",
+    "corrections": "Explicit GTCE rare weights[1,1,1,2,2]; independent cachedKD T2weight1 with per-source inverse-frequency cap5;50%rare-biased KD sampling",
+    "frozen": [
+      "restorer",
+      "USM",
+      "BN running statistics",
+      "blend",
+      "normalization"
+    ],
+    "EMA": 0.98,
+    "teacher": "immutable calibrated K1v1 soft logits; no hard target mixing",
+    "teacher_cache": "research/eurs_baseline/runs/track2_long_kd_v90/teacher_logits",
+    "teacher_manifest_sha256": "8ded20f185acb85a343726b0fded7eedc1e7f71651e6bdcb18247bc0af4ffe47",
+    "testing_images_used": false,
+    "Dev_trained": true,
+    "Dev_holdout": "starfish1",
+    "source_code_sha256": "718b7e2be691048b7b4f027f4f9f8b77081413c6085a086b9edf816b639894f5",
+    "uploads": false
+  },
+  "runs/track2_k1_continue_v92/protocol.json": {
+    "source": "research/eurs_baseline/runs/track2_k1_fix_v91/step1000/model.pt",
+    "source_sha256": "304c13c389d9c30adac2798a17292ee4ffc2c3ea7a0d8f880cb5616299b48a20",
+    "steps": 4000,
+    "data_index_offset": 1000,
+    "cumulative_steps": 5000,
+    "peak_lr": {
+      "encoder": 3e-07,
+      "head": 3e-06
+    },
+    "LR_reference": "30% ofv91peak:encoder3e-7/head3e-6; NOT30%ofv32 and NOTv91finalzeroLR",
+    "schedule": "Start at peak, cosine toexact0 atlocalstep4000; no newwarmup",
+    "frozen_anchor": "research/eurs_baseline/runs/track2_recipe_v69/expanded_curriculum/step1000/model.pt",
+    "optimizer": "FreshAdamW fromv91EMAcheckpoint; raw-weight optimizer moments not mixed withEMA",
+    "recipe": "v91 branch recipe; source1000EMA; LR30%; GT OTHER CE3x; inversefrequencyKDcap10",
+    "recipe_code_sha256": "718b7e2be691048b7b4f027f4f9f8b77081413c6085a086b9edf816b639894f5",
+    "code_sha256": "5250b03d6350070944101a2f1d42c5824ef82d20aaa34dc16773c6509674814e",
+    "data_continuation": "Useglobalsteps1001..5000 for deterministic source/crop/scale/flip/KD sampling. Existing first800step new-scene curriculum stays completed.",
+    "batch": "12v69supervised/completion slots +2cachedKD",
+    "KD": "T2,weight1,sourceinversefrequencycap10; completionrareKD2 and rare sampling preserved",
+    "GT_CE_class_weights": [
+      1,
+      1,
+      1,
+      2,
+      3
+    ],
+    "KD_inversefrequency_cap": 10.0,
+    "protection_evidence": "research/eurs_baseline/runs/track2_k1_continue_v92/teacher_OTHER_diagnosis.json",
+    "frozen": [
+      "restorer",
+      "USM",
+      "BN",
+      "blend",
+      "normalization"
+    ],
+    "EMA": 0.98,
+    "Dev_trained": true,
+    "Dev_holdout": "starfish1",
+    "testing_images_used": false,
+    "uploaded": false
+  },
+  "runs/track2_feature_kd_v100/protocol.json": {
+    "source": "research/eurs_baseline/runs/track2_k1_continue_v92/step3000/model.pt",
+    "source_sha256": "bc53ebfc3163fdf0d3ef6763974f912fba1888e7cc297429d6b3f03ef525a785",
+    "steps": 1000,
+    "LR_schedule_horizon": 4000,
+    "LR_rule": "v92 peak30% and4000step cosine unchanged; run1000 updates",
+    "peak_lr": {
+      "encoder": 3e-07,
+      "head": 3e-06,
+      "projector": 3e-06
+    },
+    "end_LR_factor": 0.8537616414286491,
+    "feature_weight": 0.5,
+    "feature_distance": "channel cosine, aligned same crop/scale/flip; valid interior pixel average",
+    "projector": "training-only96->256Conv1x1",
+    "student_feature": "features[13] (nominal stride16 stage, dilated OS8); adaptive average toceil(input/16)",
+    "KD": "unchanged T2 weight1 inversefrequencycap10",
+    "OTHER_CE": 3,
+    "pool": 5481,
+    "data_offset": 4000,
+    "source_state_exact": true,
+    "frozen": [
+      "restorer",
+      "USM",
+      "BN",
+      "blend",
+      "normalization"
+    ],
+    "testing_images_used": false,
+    "Dev_trained": true,
+    "Dev_holdout": "starfish1",
+    "uploaded": false
+  },
+  "runs/track2_recipe_v69/expanded_curriculum/protocol.json": {
+    "source": "research/eurs_baseline/runs/track2_segmentation_v47/scale/ema_1000.pt",
+    "source_sha256": "7e538a12561671ff0999422d063a1f2420e21bc61952ed374508c3b39a0a2937",
+    "arm": "expanded_curriculum",
+    "steps": 1000,
+    "cosine_horizon": 4000,
+    "cosine_floor": 0.1,
+    "warmup_steps": 100,
+    "warmup_initial_fraction": 0.1,
+    "peak_lr": {
+      "encoder": 1e-06,
+      "head": 1e-05
+    },
+    "seed": 43,
+    "sampling_seed": 34043,
+    "scale": [
+      0.5,
+      1.5
+    ],
+    "whole": [
+      384,
+      512
+    ],
+    "tile": [
+      192,
+      280
+    ],
+    "segmentation_input": "original RGB with inherited learned normalization; no restoration mixing",
+    "training_loss_path": "v53 alternating whole/tile branch loss; not full fused graph loss",
+    "frozen": [
+      "restoration",
+      "blend",
+      "normalization_beta",
+      "BN"
+    ],
+    "ema": 0.98,
+    "kd": 0.1,
+    "rare_kd_multiplier": 2,
+    "batch_composition": {
+      "official_GT": 6,
+      "background_GT": 2,
+      "Coralscapes_GT": 2,
+      "existing_SAM3_completion": 2
+    },
+    "dev_images_used": false,
+    "testing_images_used": false,
+    "code_sha256": "aaf77dfb3f7c10b7a3d3650dc035193951887e98759b508f7e9cbeedc677f31a",
+    "parent_recipe_sha256": "bee77beb37ad21f6f5bdb9263b5fe79da9016b8cfaf1734b35786db0eeceff81",
+    "update_code_sha256": "c97a289eb72379df62ef407eaa6cfdf71775a157fb2ebbfbcaddd2d4b5c15337",
+    "new_snapshot_sha256": "340894b64ed0982fe941cc56a16f84ca9362b6045e587f6c56ec42ce2973265b",
+    "new_data_schedule": "Only2 completion slots: new probability.5 steps1-500, linear to0 at800, original v63 recipe tail. No TRAIN-bank replacement."
+  }
+}

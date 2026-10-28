@@ -1,0 +1,170 @@
+{
+  "team": "UW-IPL",
+  "segmentation_train_scenes": [
+    "fish1",
+    "fish11",
+    "fish13",
+    "fish14",
+    "fish15",
+    "fish17",
+    "fish18",
+    "fish2",
+    "fish20",
+    "fish4",
+    "fish5",
+    "fish7",
+    "fish9",
+    "sharkFish",
+    "starfish2",
+    "turtles1"
+  ],
+  "local_validation_and_selection_scenes": [
+    "fish12",
+    "fish21",
+    "ray1",
+    "seahorse1"
+  ],
+  "teacher_E034_train_scenes": [
+    "fish1",
+    "fish11",
+    "fish13",
+    "fish14",
+    "fish17",
+    "fish2",
+    "fish20",
+    "fish4",
+    "fish7",
+    "fish9",
+    "ray1",
+    "seahorse1",
+    "sharkFish",
+    "starfish2"
+  ],
+  "teacher_E034_validation_scenes": [
+    "fish12",
+    "fish21",
+    "fish5",
+    "turtles1",
+    "fish15",
+    "fish18"
+  ],
+  "local_validation_caveat": "ray1 and seahorse1 were used to train the inherited E034 teacher; the four-scene local validation is not independent of that teacher.",
+  "testing_policy": "No testing-phase images were used to train or tune the final lineage. Earlier rejected isolated research was retired; see historical audit. Testing inputs are used here only for requested fixed-output reproduction checks.",
+  "testing_hyperparameter_selection": false,
+  "online_adaptation": false,
+  "cross_image_statistics": false,
+  "public_push_performed": false,
+  "track": 2,
+  "external_assets": [
+    {
+      "name": "SAM3",
+      "url": "https://github.com/facebookresearch/sam3",
+      "license": "SAM License, November19 2025; bundled actual LICENSE, not MIT despite pyproject classifier",
+      "role": "Track1 frozen image/text model; Track2 logit and feature teacher"
+    },
+    {
+      "name": "Restormer",
+      "url": "https://github.com/swz30/Restormer",
+      "license": "MIT",
+      "role": "E034 label-conditioned pretrained SIDD real-denoising Restormer; smaller custom Restormer384 using the same layers"
+    },
+    {
+      "name": "CascadePSP",
+      "url": "https://github.com/hkchengrex/CascadePSP",
+      "license": "MIT (bundled)",
+      "role": "Track1 OTHER boundary refinement; NOT mixed into Track2 soft teacher targets"
+    },
+    {
+      "name": "ConceptBank",
+      "url": "https://github.com/pgsmall/ConceptBank",
+      "license": "No LICENSE file found in pinned checkout; licensing not verified. Source attribution retained; confirm redistribution terms before public release.",
+      "role": "Track1 train-only support/text fusion; retained in Track2 teacher"
+    },
+    {
+      "name": "Torchvision MobileNetV2 ImageNet-1K",
+      "url": "https://pytorch.org/vision/stable/models/mobilenetv2.html",
+      "license": "Torchvision BSD-3-Clause code; ImageNet data terms separate",
+      "role": "Track2 first15blocks, dilated OS8, LR-ASPP head"
+    },
+    {
+      "name": "CoralscapesV2 TRAIN",
+      "url": "https://josauder.github.io/coralscapesv2/",
+      "license": "Apache-2.0 (official project page)",
+      "role": "Track2 mapped segmentation GT, clean images and teacher completion"
+    },
+    {
+      "name": "SUIM TRAIN",
+      "url": "https://irvlab.cs.umn.edu/image-segmentation/suim",
+      "license": "Dataset rights not independently verified; do not substitute SUIM-Net code license",
+      "role": "Track2 external supervision and teacher completion"
+    },
+    {
+      "name": "UIIS10K TRAIN",
+      "url": "https://github.com/LiamLian0727/UIIS10K",
+      "license": "Apache-2.0 download LICENSE; upstream image rights may vary",
+      "role": "E034 synthesis clean sources; inherited Track2 completion/scene expansion"
+    },
+    {
+      "name": "USIS10K TRAIN",
+      "url": "https://github.com/LiamLian0727/USIS10K",
+      "license": "Apache-2.0 dataset card; upstream image rights may vary",
+      "role": "E034 synthesis clean sources; inherited Track2 completion/scene expansion"
+    },
+    {
+      "name": "AquaOV",
+      "url": "https://github.com/LiBingyu01/Earth2Ocean",
+      "license": "Dataset license not verified",
+      "role": "Inherited Track2 background/partial-label external supervision; not in final5481logitKD pool"
+    },
+    {
+      "name": "SUID clean images",
+      "url": null,
+      "license": "Contributor-provided; source URL and dataset license still require confirmation",
+      "role": "Team Track2 restorer:29cleanimages, plus1789CoralscapesV2TRAIN"
+    },
+    {
+      "name": "Depth Anything V2 Small",
+      "url": "https://github.com/DepthAnything/Depth-Anything-V2",
+      "license": "Apache-2.0 (Small); no Base/Large model used in E034 synthesis",
+      "role": "Offline E034 synthetic degradation; not inference"
+    }
+  ],
+  "external_list_scope": "Full cross-track lineage inventory; per-item role identifies actual use. Failed experimental backbones are not claimed as deployed components.",
+  "submission_id": null,
+  "selected_candidate": "T1v100 (provisional; best and exact uploaded ID awaiting user)",
+  "alternatives": [
+    "T1 (v92-3000)",
+    "T1v100 (v100-1000)"
+  ],
+  "Dev_KD": true,
+  "Dev_KD_scenes": [
+    "fish10",
+    "fish19",
+    "fish3",
+    "fish6",
+    "sharRayFish"
+  ],
+  "Dev_holdout": "starfish1",
+  "Dev_holdout_images": 200,
+  "KD_training_images": 5481,
+  "KD_sources": {
+    "EURS": 3200,
+    "Dev_excluding_starfish1": 1000,
+    "SUIM": 912,
+    "CoralscapesV2": 369
+  },
+  "gf": 11.43190293,
+  "params_m": 0.889754,
+  "inference": "Static1024square RGB; raw segmentation+learned normalizer; shared whole384x512 twice with horizontalflip/unflip/mean; no tiles and noOTHER55constant; v5StatisticalRestorerV3S+separableUSM.8; RGBguidedfilterr16then4eps.001guidepostUSM.",
+  "metadata_input": false,
+  "teacher_definition": "Track1v1 foreground scores to log-odds, background threshold, minimum winner lift for selective-fusion priority rules, per-source/path TRAIN temperature calibration; no CascadePSP hard-target mixing.",
+  "training_only_projector": "v10096->2561x1cosine0.5; removed fromexport",
+  "training_metadata": "Filename water/depth used for teacher E034 and TRAIN synthesis only; ONNX input is RGB only.",
+  "restorer_record": {
+    "name": "StatisticalRestorerV3S v5",
+    "reported_best_epoch": 7,
+    "recorded_epochs_completed": 8,
+    "source": "contributor restoration_transfer_v5/result.json",
+    "note": "Actual supplied v5 file; not the proposed v5b10epoch architecture. Same checkpoint and output as the uploaded T1/T1v100 artifacts."
+  }
+}

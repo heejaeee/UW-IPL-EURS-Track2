@@ -1,0 +1,27 @@
+EURS testing-data retirement and Dev-only transition — 2026-10-25
+
+Organizer reply (provided by user): testing-phase images cannot be used as training data in either track. Dev degraded/no-GT images may be used as unlabeled or pseudo-label data with method/factsheet disclosure.
+
+Actions completed:
+- Stopped the v57 research process group and retired v49/v57 outside the EURS submission and active-training paths.
+- Disabled retired entry points. Deleted testing-derived pseudo-labels and flipped restoration caches (1,576,857,815 bytes). Remaining checkpoints/logs retained only as rejected audit evidence, never submission candidates.
+- Original Track1 testing inference/submission outputs were preserved.
+- 5 reproduction/share archives scanned: no retired research path references found.
+- 44 artifact/snapshot hash checks passed (includes repeated files across snapshots).
+- Root-source rg hits were only the rejection assertions in two package builders, not training data reads.
+- 7 explicitly linked Track2 checkpoints/heads inspected: no testing research references found. v53 ONNX and existing package bytes unchanged.
+- Track1 reviewed testing inference paths use frozen/eval models. Native/dual score calibration and ConceptBank supports use 320 official-train images from 16 scenes. No testing-image BN recalibration or learned-weight updates found in those paths.
+- Track1 TTA means horizontal-flip augmentation. Parameters/rules are selected on local GT validation before testing inference. Physics restoration uses a fixed inference-time inverse correction; it does not update learned weights.
+
+Limitations: this is a source/provenance audit, not proof that undocumented manual actions never happened. Explicit checkpoint links do not encode every historical input. Local ray1/seahorse1 GT evaluation is not independent of the imported E034 restoration teacher's training; this predates the Dev experiment.
+
+New v58 Dev experiment:
+- 1200 images, six scenes x200: fish10, fish19, fish3, fish6, sharRayFish, starfish1.
+- No scene-name overlap with official train16 or local validation4.
+- fold1 holdout fish10/starfish1; fold2 holdout fish19/sharRayFish; each trains on the other four scenes.
+- Frozen Track1 pipeline; original/flip agreement; confident pixels only; uncertain CE and KD ignored.
+- All six pilot predictions exactly reproduce existing Dev-submission masks.
+- v53-1000 initialization; encoder/head peakLR1e-6/1e-5;100warmup;1000steps;scale0.5-1.5;restorer/mix/BN/beta frozen.
+- Shared existing-data control and two treatment runs. Report local800 GT and teacher-agreement holdouts separately.
+- Method description and factsheet disclose: Track1 Dev-split degraded images, pseudo-labeled by our Track1 pipeline.
+- No automatic leaderboard upload. Conditional all-six-scene candidate preparation only after paired results warrant it.

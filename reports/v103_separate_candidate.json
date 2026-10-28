@@ -1,0 +1,614 @@
+{
+  "checkpoints": [
+    {
+      "step": 500,
+      "decision": {
+        "local": {
+          "miou": 0.5278421539881675,
+          "f1": 0.6631929867299144,
+          "coverage_penalty": 1.0,
+          "per_class": {
+            "background": {
+              "present": true,
+              "iou": 0.7129065930334193,
+              "f1": 0.8323940090287343,
+              "recall": 0.9079963601979616,
+              "precision": 0.7684137054206926
+            },
+            "coral": {
+              "present": true,
+              "iou": 0.4333736364381747,
+              "f1": 0.6046903967273676,
+              "recall": 0.48420476131232704,
+              "precision": 0.8050002003411715
+            },
+            "fish": {
+              "present": true,
+              "iou": 0.6333784944923819,
+              "f1": 0.7755440599078317,
+              "recall": 0.7515404238519201,
+              "precision": 0.8011316008701883
+            },
+            "elasmobranch": {
+              "present": true,
+              "iou": 0.6941301119198171,
+              "f1": 0.8194531305900903,
+              "recall": 0.8978895644425808,
+              "precision": 0.7536196063522974
+            },
+            "other": {
+              "present": true,
+              "iou": 0.16542193405704445,
+              "f1": 0.2838833373955487,
+              "recall": 0.26264124571586395,
+              "precision": 0.30886385525762605
+            }
+          },
+          "qseg": 0.3500612146253642
+        },
+        "Dev_teacher_agreement": {
+          "miou": 0.3534226591788022,
+          "f1": 0.40649628084267914,
+          "coverage_penalty": 0.0,
+          "per_class": {
+            "background": {
+              "present": true,
+              "iou": 0.9039713918709004,
+              "f1": 0.9495640488407029,
+              "recall": 0.9272707150647153,
+              "precision": 0.9729557365449176
+            },
+            "coral": {
+              "present": true,
+              "iou": 0.0,
+              "f1": 0.0,
+              "recall": 0.0,
+              "precision": 0.0
+            },
+            "fish": {
+              "present": false,
+              "iou": 0.0,
+              "f1": 0.0,
+              "recall": null,
+              "precision": 0.0
+            },
+            "elasmobranch": {
+              "present": true,
+              "iou": 0.001045431078988126,
+              "f1": 0.0020886785884658525,
+              "recall": 0.1883720930232558,
+              "precision": 0.0010501614136987723
+            },
+            "other": {
+              "present": true,
+              "iou": 0.5086738137653205,
+              "f1": 0.6743323959415478,
+              "recall": 0.7245784048986422,
+              "precision": 0.6306031187006187
+            }
+          },
+          "qseg": 0.0
+        },
+        "safety_passed": true,
+        "submission_candidate": true,
+        "thresholds": {
+          "local_miou": 0.5277087078427801,
+          "starfish_agreement": 0.3504,
+          "OTHER_recall": 0.25,
+          "coverage": 1
+        },
+        "structure": "T1",
+        "OTHER55_applicable": false,
+        "teacher_agreement_is_not_GT_accuracy": true,
+        "uploaded": false
+      },
+      "validation": {
+        "file": "research/EURS/UW-IPL-Track2-v103-step500-T1.onnx",
+        "sha256": "08e8f6ec0f766abd9970565dca1ff9e7915746cc5627a5cececd474268caa005",
+        "compute": {
+          "total_gflops": 11.431902930000007,
+          "total_params_m": 0.889754,
+          "op_gflops": {
+            "Conv": 11.431840000000006,
+            "Gemm": 6.0626e-05,
+            "MatMul": 2.304e-06
+          },
+          "op_counts": {
+            "ReduceMean": 9,
+            "Sub": 56,
+            "Mul": 114,
+            "Add": 63,
+            "Sqrt": 3,
+            "Div": 20,
+            "Concat": 8,
+            "Resize": 12,
+            "Conv": 126,
+            "Sigmoid": 27,
+            "Slice": 27,
+            "Tanh": 3,
+            "Reshape": 1,
+            "Unsqueeze": 7,
+            "LessOrEqual": 1,
+            "Cast": 2,
+            "Less": 1,
+            "ReduceSum": 1,
+            "Log": 2,
+            "Gather": 5,
+            "Flatten": 2,
+            "Gemm": 3,
+            "Softmax": 1,
+            "MatMul": 2,
+            "Clip": 68,
+            "Pad": 1,
+            "Relu": 2,
+            "GlobalAveragePool": 2,
+            "AveragePool": 60
+          },
+          "unrecognized_ops": [
+            "AveragePool",
+            "Flatten",
+            "GlobalAveragePool",
+            "Less",
+            "LessOrEqual",
+            "Log",
+            "Pad",
+            "ReduceMean",
+            "ReduceSum",
+            "Softmax",
+            "Sqrt",
+            "Tanh"
+          ]
+        },
+        "numeric_passed": true,
+        "historical_strict_numeric_gate_passed": false,
+        "restored_image_bitexact_images": [
+          "fish12_1_5",
+          "fish12_9_50",
+          "fish12_10_100",
+          "fish21_1_5",
+          "fish21_9_50",
+          "fish21_10_100",
+          "ray1_1_5",
+          "ray1_9_50",
+          "ray1_10_100",
+          "seahorse1_1_5",
+          "seahorse1_9_50",
+          "seahorse1_10_100"
+        ],
+        "restoration_graph_identical": true,
+        "configuration": {
+          "whole": [
+            384,
+            512
+          ],
+          "whole_flip": true,
+          "tile": null
+        },
+        "uploaded": false,
+        "tensorrt_verified": false,
+        "evaluation_pending": false,
+        "source": "research/eurs_baseline/runs/track2_whole_only_v103/step500/model.pt",
+        "source_sha256": "c50bf9b13093533cf756bbc1b03bbba76b1daa0017e916ee9e422fa156dab272",
+        "projector_exported": false,
+        "OTHER55_applicable": false,
+        "static_input": [
+          1,
+          3,
+          1024,
+          1024
+        ],
+        "output_names": [
+          "restored_image",
+          "seg_logits"
+        ],
+        "decision": {
+          "local": {
+            "miou": 0.5278421539881675,
+            "f1": 0.6631929867299144,
+            "coverage_penalty": 1.0,
+            "per_class": {
+              "background": {
+                "present": true,
+                "iou": 0.7129065930334193,
+                "f1": 0.8323940090287343,
+                "recall": 0.9079963601979616,
+                "precision": 0.7684137054206926
+              },
+              "coral": {
+                "present": true,
+                "iou": 0.4333736364381747,
+                "f1": 0.6046903967273676,
+                "recall": 0.48420476131232704,
+                "precision": 0.8050002003411715
+              },
+              "fish": {
+                "present": true,
+                "iou": 0.6333784944923819,
+                "f1": 0.7755440599078317,
+                "recall": 0.7515404238519201,
+                "precision": 0.8011316008701883
+              },
+              "elasmobranch": {
+                "present": true,
+                "iou": 0.6941301119198171,
+                "f1": 0.8194531305900903,
+                "recall": 0.8978895644425808,
+                "precision": 0.7536196063522974
+              },
+              "other": {
+                "present": true,
+                "iou": 0.16542193405704445,
+                "f1": 0.2838833373955487,
+                "recall": 0.26264124571586395,
+                "precision": 0.30886385525762605
+              }
+            },
+            "qseg": 0.3500612146253642
+          },
+          "Dev_teacher_agreement": {
+            "miou": 0.3534226591788022,
+            "f1": 0.40649628084267914,
+            "coverage_penalty": 0.0,
+            "per_class": {
+              "background": {
+                "present": true,
+                "iou": 0.9039713918709004,
+                "f1": 0.9495640488407029,
+                "recall": 0.9272707150647153,
+                "precision": 0.9729557365449176
+              },
+              "coral": {
+                "present": true,
+                "iou": 0.0,
+                "f1": 0.0,
+                "recall": 0.0,
+                "precision": 0.0
+              },
+              "fish": {
+                "present": false,
+                "iou": 0.0,
+                "f1": 0.0,
+                "recall": null,
+                "precision": 0.0
+              },
+              "elasmobranch": {
+                "present": true,
+                "iou": 0.001045431078988126,
+                "f1": 0.0020886785884658525,
+                "recall": 0.1883720930232558,
+                "precision": 0.0010501614136987723
+              },
+              "other": {
+                "present": true,
+                "iou": 0.5086738137653205,
+                "f1": 0.6743323959415478,
+                "recall": 0.7245784048986422,
+                "precision": 0.6306031187006187
+              }
+            },
+            "qseg": 0.0
+          },
+          "safety_passed": true,
+          "submission_candidate": true,
+          "thresholds": {
+            "local_miou": 0.5277087078427801,
+            "starfish_agreement": 0.3504,
+            "OTHER_recall": 0.25,
+            "coverage": 1
+          },
+          "structure": "T1",
+          "OTHER55_applicable": false,
+          "teacher_agreement_is_not_GT_accuracy": true,
+          "uploaded": false
+        },
+        "submission_candidate": true
+      }
+    },
+    {
+      "step": 1000,
+      "decision": {
+        "local": {
+          "miou": 0.5281157685116281,
+          "f1": 0.6628245457018103,
+          "coverage_penalty": 1.0,
+          "per_class": {
+            "background": {
+              "present": true,
+              "iou": 0.7124833225594168,
+              "f1": 0.8321054146028873,
+              "recall": 0.9093748086906713,
+              "precision": 0.7669387810560963
+            },
+            "coral": {
+              "present": true,
+              "iou": 0.4332258508867005,
+              "f1": 0.6045465208692331,
+              "recall": 0.4849235097951158,
+              "precision": 0.8025141541299603
+            },
+            "fish": {
+              "present": true,
+              "iou": 0.6336728259586729,
+              "f1": 0.7757646646130881,
+              "recall": 0.7523704629774914,
+              "precision": 0.8006603929764812
+            },
+            "elasmobranch": {
+              "present": true,
+              "iou": 0.6993195816782942,
+              "f1": 0.8230583454909961,
+              "recall": 0.8947478029945665,
+              "precision": 0.7620046085400608
+            },
+            "other": {
+              "present": true,
+              "iou": 0.16187726147505574,
+              "f1": 0.27864778293284653,
+              "recall": 0.25321457715211143,
+              "precision": 0.3097605397004847
+            }
+          },
+          "qseg": 0.3500480943416823
+        },
+        "Dev_teacher_agreement": {
+          "miou": 0.3545818182466225,
+          "f1": 0.4073625397553441,
+          "coverage_penalty": 0.0,
+          "per_class": {
+            "background": {
+              "present": true,
+              "iou": 0.9060072953360135,
+              "f1": 0.9506860729788464,
+              "recall": 0.9299136847568535,
+              "precision": 0.972407691236016
+            },
+            "coral": {
+              "present": true,
+              "iou": 0.0,
+              "f1": 0.0,
+              "recall": 0.0,
+              "precision": 0.0
+            },
+            "fish": {
+              "present": false,
+              "iou": 0.0,
+              "f1": 0.0,
+              "recall": null,
+              "precision": 0.0
+            },
+            "elasmobranch": {
+              "present": true,
+              "iou": 0.00110050864972957,
+              "f1": 0.002198597723646991,
+              "recall": 0.19069767441860466,
+              "precision": 0.0011056726399956852
+            },
+            "other": {
+              "present": true,
+              "iou": 0.5112194690007468,
+              "f1": 0.6765654883188831,
+              "recall": 0.7202114631270681,
+              "precision": 0.6379072796103671
+            }
+          },
+          "qseg": 0.0
+        },
+        "safety_passed": true,
+        "submission_candidate": true,
+        "thresholds": {
+          "local_miou": 0.5277087078427801,
+          "starfish_agreement": 0.3504,
+          "OTHER_recall": 0.25,
+          "coverage": 1
+        },
+        "structure": "T1",
+        "OTHER55_applicable": false,
+        "teacher_agreement_is_not_GT_accuracy": true,
+        "uploaded": false
+      },
+      "validation": {
+        "file": "research/EURS/UW-IPL-Track2-v103-step1000-T1.onnx",
+        "sha256": "5ecb04083cb4d1d0553f833b834d3baaa9e2759e56ce0454c198ccb603e7f2f1",
+        "compute": {
+          "total_gflops": 11.431902930000007,
+          "total_params_m": 0.889754,
+          "op_gflops": {
+            "Conv": 11.431840000000006,
+            "Gemm": 6.0626e-05,
+            "MatMul": 2.304e-06
+          },
+          "op_counts": {
+            "ReduceMean": 9,
+            "Sub": 56,
+            "Mul": 114,
+            "Add": 63,
+            "Sqrt": 3,
+            "Div": 20,
+            "Concat": 8,
+            "Resize": 12,
+            "Conv": 126,
+            "Sigmoid": 27,
+            "Slice": 27,
+            "Tanh": 3,
+            "Reshape": 1,
+            "Unsqueeze": 7,
+            "LessOrEqual": 1,
+            "Cast": 2,
+            "Less": 1,
+            "ReduceSum": 1,
+            "Log": 2,
+            "Gather": 5,
+            "Flatten": 2,
+            "Gemm": 3,
+            "Softmax": 1,
+            "MatMul": 2,
+            "Clip": 68,
+            "Pad": 1,
+            "Relu": 2,
+            "GlobalAveragePool": 2,
+            "AveragePool": 60
+          },
+          "unrecognized_ops": [
+            "AveragePool",
+            "Flatten",
+            "GlobalAveragePool",
+            "Less",
+            "LessOrEqual",
+            "Log",
+            "Pad",
+            "ReduceMean",
+            "ReduceSum",
+            "Softmax",
+            "Sqrt",
+            "Tanh"
+          ]
+        },
+        "numeric_passed": true,
+        "historical_strict_numeric_gate_passed": false,
+        "restored_image_bitexact_images": [
+          "fish12_1_5",
+          "fish12_9_50",
+          "fish12_10_100",
+          "fish21_1_5",
+          "fish21_9_50",
+          "fish21_10_100",
+          "ray1_1_5",
+          "ray1_9_50",
+          "ray1_10_100",
+          "seahorse1_1_5",
+          "seahorse1_9_50",
+          "seahorse1_10_100"
+        ],
+        "restoration_graph_identical": true,
+        "configuration": {
+          "whole": [
+            384,
+            512
+          ],
+          "whole_flip": true,
+          "tile": null
+        },
+        "uploaded": false,
+        "tensorrt_verified": false,
+        "evaluation_pending": false,
+        "source": "research/eurs_baseline/runs/track2_whole_only_v103/step1000/model.pt",
+        "source_sha256": "1124b1960def1665419592a438ceb994509a6b149509254c8a1ea563b90b84b2",
+        "projector_exported": false,
+        "OTHER55_applicable": false,
+        "static_input": [
+          1,
+          3,
+          1024,
+          1024
+        ],
+        "output_names": [
+          "restored_image",
+          "seg_logits"
+        ],
+        "decision": {
+          "local": {
+            "miou": 0.5281157685116281,
+            "f1": 0.6628245457018103,
+            "coverage_penalty": 1.0,
+            "per_class": {
+              "background": {
+                "present": true,
+                "iou": 0.7124833225594168,
+                "f1": 0.8321054146028873,
+                "recall": 0.9093748086906713,
+                "precision": 0.7669387810560963
+              },
+              "coral": {
+                "present": true,
+                "iou": 0.4332258508867005,
+                "f1": 0.6045465208692331,
+                "recall": 0.4849235097951158,
+                "precision": 0.8025141541299603
+              },
+              "fish": {
+                "present": true,
+                "iou": 0.6336728259586729,
+                "f1": 0.7757646646130881,
+                "recall": 0.7523704629774914,
+                "precision": 0.8006603929764812
+              },
+              "elasmobranch": {
+                "present": true,
+                "iou": 0.6993195816782942,
+                "f1": 0.8230583454909961,
+                "recall": 0.8947478029945665,
+                "precision": 0.7620046085400608
+              },
+              "other": {
+                "present": true,
+                "iou": 0.16187726147505574,
+                "f1": 0.27864778293284653,
+                "recall": 0.25321457715211143,
+                "precision": 0.3097605397004847
+              }
+            },
+            "qseg": 0.3500480943416823
+          },
+          "Dev_teacher_agreement": {
+            "miou": 0.3545818182466225,
+            "f1": 0.4073625397553441,
+            "coverage_penalty": 0.0,
+            "per_class": {
+              "background": {
+                "present": true,
+                "iou": 0.9060072953360135,
+                "f1": 0.9506860729788464,
+                "recall": 0.9299136847568535,
+                "precision": 0.972407691236016
+              },
+              "coral": {
+                "present": true,
+                "iou": 0.0,
+                "f1": 0.0,
+                "recall": 0.0,
+                "precision": 0.0
+              },
+              "fish": {
+                "present": false,
+                "iou": 0.0,
+                "f1": 0.0,
+                "recall": null,
+                "precision": 0.0
+              },
+              "elasmobranch": {
+                "present": true,
+                "iou": 0.00110050864972957,
+                "f1": 0.002198597723646991,
+                "recall": 0.19069767441860466,
+                "precision": 0.0011056726399956852
+              },
+              "other": {
+                "present": true,
+                "iou": 0.5112194690007468,
+                "f1": 0.6765654883188831,
+                "recall": 0.7202114631270681,
+                "precision": 0.6379072796103671
+              }
+            },
+            "qseg": 0.0
+          },
+          "safety_passed": true,
+          "submission_candidate": true,
+          "thresholds": {
+            "local_miou": 0.5277087078427801,
+            "starfish_agreement": 0.3504,
+            "OTHER_recall": 0.25,
+            "coverage": 1
+          },
+          "structure": "T1",
+          "OTHER55_applicable": false,
+          "teacher_agreement_is_not_GT_accuracy": true,
+          "uploaded": false
+        },
+        "submission_candidate": true
+      }
+    }
+  ],
+  "updated": "2026-10-27T19:15:27.082912-07:00",
+  "uploaded": false
+}

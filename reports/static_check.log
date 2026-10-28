@@ -1,0 +1,12 @@
+checking <EURS_workspace>/UW-IPL-EURS-Track2-Final
+
+ERROR   repro.yaml: submission_id must be the positive integer ID of your best-scoring TESTING-PHASE submission in this track
+ERROR   repro.yaml: contact must be an e-mail address
+ok      METHOD.md
+ok      run.py not needed for Track 2
+ok      export_onnx.py main() signature
+ok      onnx/submitted_model.onnx present (3.7 MB); its SHA-256 goes into the factsheet
+ok      weights committed in weights/ (4 file(s))
+
+2 error(s), 0 warning(s)
+NOT READY: fix the errors above

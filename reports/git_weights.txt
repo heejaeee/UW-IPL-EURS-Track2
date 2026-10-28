@@ -1,0 +1,4 @@
+weights/T1.pt
+weights/T1v100.pt
+weights/all_train_fits.jsonl
+weights/best_full.pt

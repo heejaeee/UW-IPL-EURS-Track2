@@ -1,0 +1,31 @@
+{
+  "KD_train_images": 5481,
+  "KD_train_source_counts": {
+    "EURS": 3200,
+    "CoralscapesV2": 369,
+    "SUIM": 912,
+    "Dev": 1000
+  },
+  "Dev_holdout_images": 200,
+  "starfish1_excluded_from_training": true,
+  "restoration_bank_images": 3200,
+  "restoration_bank_scenes": [
+    "fish1",
+    "fish11",
+    "fish13",
+    "fish14",
+    "fish15",
+    "fish17",
+    "fish18",
+    "fish2",
+    "fish20",
+    "fish4",
+    "fish5",
+    "fish7",
+    "fish9",
+    "sharkFish",
+    "starfish2",
+    "turtles1"
+  ],
+  "testing_images_in_final_lineage": false
+}

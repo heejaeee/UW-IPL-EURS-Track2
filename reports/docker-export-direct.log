@@ -1,0 +1,7 @@
+/opt/conda/lib/python3.11/site-packages/torch/onnx/_internal/jit_utils.py:314: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /opt/conda/conda-bld/pytorch_1720538456841/work/torch/csrc/jit/passes/onnx/constant_fold.cpp:179.)
+  _C._jit_pass_onnx_node_shape_type_inference(node, params_dict, opset_version)
+/opt/conda/lib/python3.11/site-packages/torch/onnx/utils.py:739: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /opt/conda/conda-bld/pytorch_1720538456841/work/torch/csrc/jit/passes/onnx/constant_fold.cpp:179.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+/opt/conda/lib/python3.11/site-packages/torch/onnx/utils.py:1244: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /opt/conda/conda-bld/pytorch_1720538456841/work/torch/csrc/jit/passes/onnx/constant_fold.cpp:179.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+Checking 0/1...

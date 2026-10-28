@@ -1,0 +1,359 @@
+{
+  "file": "research/EURS/UW-IPL-Track2-T1-flip-TTA.onnx",
+  "sha256": "da9398117ccf766640a544a202b2094c110f28d38d426aefa6b5bbdb1377e54c",
+  "compute": {
+    "total_gflops": 11.431902930000007,
+    "total_params_m": 0.889754,
+    "op_gflops": {
+      "Conv": 11.431840000000006,
+      "Gemm": 6.0626e-05,
+      "MatMul": 2.304e-06
+    },
+    "op_counts": {
+      "ReduceMean": 9,
+      "Sub": 56,
+      "Mul": 114,
+      "Add": 63,
+      "Sqrt": 3,
+      "Div": 20,
+      "Concat": 8,
+      "Resize": 12,
+      "Conv": 126,
+      "Sigmoid": 27,
+      "Slice": 27,
+      "Tanh": 3,
+      "Reshape": 1,
+      "Unsqueeze": 7,
+      "LessOrEqual": 1,
+      "Cast": 2,
+      "Less": 1,
+      "ReduceSum": 1,
+      "Log": 2,
+      "Gather": 5,
+      "Flatten": 2,
+      "Gemm": 3,
+      "Softmax": 1,
+      "MatMul": 2,
+      "Clip": 68,
+      "Pad": 1,
+      "Relu": 2,
+      "GlobalAveragePool": 2,
+      "AveragePool": 60
+    },
+    "unrecognized_ops": [
+      "AveragePool",
+      "Flatten",
+      "GlobalAveragePool",
+      "Less",
+      "LessOrEqual",
+      "Log",
+      "Pad",
+      "ReduceMean",
+      "ReduceSum",
+      "Softmax",
+      "Sqrt",
+      "Tanh"
+    ]
+  },
+  "numeric_passed": true,
+  "historical_strict_numeric_gate_passed": false,
+  "restored_image_bitexact_images": [
+    "fish12_1_5",
+    "fish12_9_50",
+    "fish12_10_100",
+    "fish21_1_5",
+    "fish21_9_50",
+    "fish21_10_100",
+    "ray1_1_5",
+    "ray1_9_50",
+    "ray1_10_100",
+    "seahorse1_1_5",
+    "seahorse1_9_50",
+    "seahorse1_10_100"
+  ],
+  "restoration_graph_identical": true,
+  "configuration": {
+    "whole": [
+      384,
+      512
+    ],
+    "whole_flip": true,
+    "tile": null
+  },
+  "uploaded": false,
+  "tensorrt_verified": false,
+  "evaluation_pending": false,
+  "metrics": {
+    "local": {
+      "miou": 0.5253375605055914,
+      "f1": 0.6643385355337182,
+      "coverage_penalty": 1.0,
+      "per_class": {
+        "background": {
+          "present": true,
+          "iou": 0.7185601039679825,
+          "f1": 0.8362350578358004,
+          "recall": 0.9041004900549455,
+          "precision": 0.7778467416034287
+        },
+        "coral": {
+          "present": true,
+          "iou": 0.4373350710064392,
+          "f1": 0.60853600503912,
+          "recall": 0.4776377779531,
+          "precision": 0.8382654488779795
+        },
+        "fish": {
+          "present": true,
+          "iou": 0.6259048375549625,
+          "f1": 0.7699157085923908,
+          "recall": 0.714388087199915,
+          "precision": 0.8348028739172151
+        },
+        "elasmobranch": {
+          "present": true,
+          "iou": 0.6603592983770741,
+          "f1": 0.7954414433340367,
+          "recall": 0.9102675716756643,
+          "precision": 0.706339870220298
+        },
+        "other": {
+          "present": true,
+          "iou": 0.18452849162149892,
+          "f1": 0.311564462867243,
+          "recall": 0.32964825098446204,
+          "precision": 0.29536156782800027
+        }
+      },
+      "qseg": 0.34900198560714074
+    },
+    "starfish1": {
+      "miou": 0.3484235613010074,
+      "f1": 0.40268520572056404,
+      "coverage_penalty": 0.0,
+      "per_class": {
+        "background": {
+          "present": true,
+          "iou": 0.8963341455220535,
+          "f1": 0.9453335506705187,
+          "recall": 0.9172625397950755,
+          "precision": 0.9751769168281286
+        },
+        "coral": {
+          "present": true,
+          "iou": 0.0,
+          "f1": 0.0,
+          "recall": 0.0,
+          "precision": 0.0
+        },
+        "fish": {
+          "present": false,
+          "iou": 0.0,
+          "f1": 0.0,
+          "recall": null,
+          "precision": 0.0
+        },
+        "elasmobranch": {
+          "present": true,
+          "iou": 0.000987251577456325,
+          "f1": 0.001972555746140652,
+          "recall": 0.21395348837209302,
+          "precision": 0.000990845449649973
+        },
+        "other": {
+          "present": true,
+          "iou": 0.4963728481045198,
+          "f1": 0.6634347164655968,
+          "recall": 0.7417327805879892,
+          "precision": 0.6000887407551456
+        }
+      },
+      "qseg": 0.0
+    },
+    "per_scene": {
+      "fish12": {
+        "miou": 0.8279259043870076,
+        "f1": 0.9008476678553703,
+        "coverage_penalty": 1.0,
+        "per_class": {
+          "background": {
+            "present": true,
+            "iou": 0.9202923295867855,
+            "f1": 0.9584919081406912,
+            "recall": 0.9887850882072964,
+            "precision": 0.9299997217506601
+          },
+          "coral": {
+            "present": true,
+            "iou": 0.9059087918458917,
+            "f1": 0.9506318410636114,
+            "recall": 0.9268950271931615,
+            "precision": 0.975616357328634
+          },
+          "fish": {
+            "present": true,
+            "iou": 0.6575765917283458,
+            "f1": 0.7934192543618083,
+            "recall": 0.7041973778551675,
+            "precision": 0.9085301076810548
+          },
+          "elasmobranch": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          },
+          "other": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          }
+        },
+        "qseg": 0.7458351201240841
+      },
+      "fish21": {
+        "miou": 0.759694668956939,
+        "f1": 0.8573173974451436,
+        "coverage_penalty": 1.0,
+        "per_class": {
+          "background": {
+            "present": true,
+            "iou": 0.8884940514602798,
+            "f1": 0.9409550967589768,
+            "recall": 0.946074190302885,
+            "precision": 0.9358911026762533
+          },
+          "coral": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          },
+          "fish": {
+            "present": true,
+            "iou": 0.6308952864535983,
+            "f1": 0.7736796981313102,
+            "recall": 0.7177322626618444,
+            "precision": 0.8390867507058993
+          },
+          "elasmobranch": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          },
+          "other": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          }
+        },
+        "qseg": 0.6512994564431129
+      },
+      "ray1": {
+        "miou": 0.47385167947970636,
+        "f1": 0.5601314478717659,
+        "coverage_penalty": 1.0,
+        "per_class": {
+          "background": {
+            "present": true,
+            "iou": 0.7412136610691044,
+            "f1": 0.8513758852707364,
+            "recall": 0.9535291330192912,
+            "precision": 0.7689923830738457
+          },
+          "coral": {
+            "present": true,
+            "iou": 0.01534179442280907,
+            "f1": 0.030219960425307644,
+            "recall": 0.015356226674102354,
+            "precision": 0.9422766110903453
+          },
+          "fish": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          },
+          "elasmobranch": {
+            "present": true,
+            "iou": 0.6649995829472058,
+            "f1": 0.7987984979192536,
+            "recall": 0.9102675716756643,
+            "precision": 0.7116514536401308
+          },
+          "other": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          }
+        },
+        "qseg": 0.26541922730343587
+      },
+      "seahorse1": {
+        "miou": 0.19965126402631775,
+        "f1": 0.3058255202022157,
+        "coverage_penalty": 1.0,
+        "per_class": {
+          "background": {
+            "present": true,
+            "iou": 0.38694664452370264,
+            "f1": 0.5579834610820024,
+            "recall": 0.6822945677507897,
+            "precision": 0.47198909760334595
+          },
+          "coral": {
+            "present": true,
+            "iou": 0.016423486371428472,
+            "f1": 0.032316227618980634,
+            "recall": 0.020096070724100547,
+            "precision": 0.08245763093010447
+          },
+          "fish": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          },
+          "elasmobranch": {
+            "present": false,
+            "iou": 0.0,
+            "f1": 0.0,
+            "recall": null,
+            "precision": 0.0
+          },
+          "other": {
+            "present": true,
+            "iou": 0.19558366118382217,
+            "f1": 0.32717687190566414,
+            "recall": 0.32964825098446204,
+            "precision": 0.32474227303494946
+          }
+        },
+        "qseg": 0.06105845167987854
+      }
+    },
+    "starfish1_is_teacher_agreement_not_GT": true,
+    "testing_images_used": false,
+    "checkpoint": "research/eurs_baseline/runs/track2_k1_continue_v92/step3000/model.pt",
+    "onnx_sha256": "da9398117ccf766640a544a202b2094c110f28d38d426aefa6b5bbdb1377e54c",
+    "evaluation_engine": "PyTorch CUDA FP32; ONNX numeric parity independently verified",
+    "CPU_ORT_subset_agreement": {
+      "images": 316,
+      "mIoU_difference": 2.6051239558455563e-05
+    }
+  },
+  "accepted": false,
+  "threshold": 0.3555
+}

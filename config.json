@@ -1,0 +1,8 @@
+{
+  "candidate": "T1v100",
+  "candidates": {
+    "T1": "weights/T1.pt",
+    "T1v100": "weights/T1v100.pt"
+  },
+  "final_best_confirmed": false
+}

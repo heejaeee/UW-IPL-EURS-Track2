@@ -1,0 +1,11 @@
+{
+  "nodes": 629,
+  "initializer_count": 218,
+  "same_nodes": true,
+  "same_attributes": true,
+  "same_weights": true,
+  "canonicalized_shape_initializer": "/restorer/Concat_5_output_0",
+  "original_export_torch": "2.7.1",
+  "reproduction_torch": "2.4.0",
+  "network_disabled": true
+}

@@ -1,0 +1,10 @@
+{
+  "candidates": {
+    "T1": "da9398117ccf766640a544a202b2094c110f28d38d426aefa6b5bbdb1377e54c",
+    "T1v100": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369"
+  },
+  "selected": "T1v100",
+  "exact_uploaded_id_confirmation_pending": true,
+  "graph_equal_local_torch271": true,
+  "torch24_difference": "one folded reshape initializer name; numerics unchanged; exporter now canonicalizes only that name"
+}

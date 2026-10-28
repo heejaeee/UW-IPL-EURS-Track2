@@ -1,0 +1,54 @@
+{
+  "Track1": {
+    "directory": "UW-IPL-EURS-Track1-Final",
+    "submission_id": 19050,
+    "host20_pixels_exact": true,
+    "rename20_exact": true,
+    "host_network_blocked_run5": true,
+    "cuda128_offline_container_run5": true,
+    "cuda128_mask_pixel_mismatches": 3,
+    "peak_allocated_GiB": 5.597517490386963,
+    "requested_torch251_GPU_verified": false,
+    "reason": "LocalRTX5080not supported byTorch2.5.1CUDA12.4; extraCUDA12.8verification is separate.",
+    "static_missing": [
+      "contact email",
+      "weights HTTPS URL"
+    ],
+    "weights": {
+      "filename": "UW-IPL-Track1-19050-weights.tar.gz",
+      "sha256": "87497b7a5b854ffb79739267fe29423b06f3addc42c7f46e07970d07f473569c",
+      "bytes": 3525648308,
+      "url_pending": true,
+      "contains_licenses": true
+    }
+  },
+  "Track2": {
+    "directory": "UW-IPL-EURS-Track2-Final",
+    "selected_candidate": "T1v100 (provisional)",
+    "T1_torch24_offline_export_same_graph_weights": true,
+    "T1v100_torch24_offline_export_same_graph_weights": true,
+    "params_m": 0.889754,
+    "gflops": 11.43190293,
+    "weights_tracked": [
+      "weights/T1.pt",
+      "weights/T1v100.pt",
+      "weights/best_full.pt",
+      "weights/all_train_fits.jsonl"
+    ],
+    "weights_link_yaml_present": false,
+    "static_missing": [
+      "confirmed final submission ID",
+      "contact email"
+    ],
+    "submitted_onnx_sha256": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369"
+  },
+  "public_push": false,
+  "uploaded": false,
+  "v103": {
+    "step1000_local_mIoU": 0.5281157685116281,
+    "starfish_teacher_agreement": 0.3545818182466225,
+    "OTHER_recall": 0.25321457715211143,
+    "candidate_criteria_passed": true,
+    "separate_from_repro_best": true
+  }
+}

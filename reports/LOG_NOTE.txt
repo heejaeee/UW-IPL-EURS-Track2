@@ -1,0 +1,1 @@
+Machine-specific host path prefixes in log copies were replaced by portable labels. Numerical values and errors were not changed. Container /pkg and /opt paths are retained.
