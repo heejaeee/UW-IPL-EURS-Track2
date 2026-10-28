@@ -76,7 +76,7 @@
     {
       "name": "ConceptBank",
       "url": "https://github.com/pgsmall/ConceptBank",
-      "license": "No LICENSE file found in pinned checkout; licensing not verified. Source attribution retained; confirm redistribution terms before public release.",
+      "license": "no license file in the public repository; used for academic research",
       "role": "Track1 train-only support/text fusion; retained in Track2 teacher"
     },
     {
@@ -86,15 +86,25 @@
       "role": "Track2 first 15 blocks, dilated OS8, LR-ASPP head"
     },
     {
+      "name": "DINOv3-L/16 LVD-1689M",
+      "url": "https://huggingface.co/facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "license": "DINOv3 License (Meta)",
+      "license_url": "https://github.com/facebookresearch/dinov3/blob/main/LICENSE.md",
+      "role": "Training-only frozen dense-feature teacher in Track2 v4, inherited via v5/v9 into v17 and the final student; not deployed and not part of Track1 inference",
+      "training_loss": "v4 cosine feature loss weight 0.25; training-only projections; separate from v100 SAM3 feature loss weight 0.5"
+    },
+    {
       "name": "CoralscapesV2 TRAIN",
       "url": "https://josauder.github.io/coralscapesv2/",
       "license": "Apache-2.0 (official project page)",
-      "role": "Track2 mapped segmentation GT, clean images and teacher completion"
+      "role": "Track2 mapped segmentation GT, clean images and teacher completion",
+      "relationship_to_original_dataset": "Recorded direct source: josauder/coralscapesV2 TRAIN, including v17 mapped GT and contributor restoration sources. CoralscapesV2 extends the original Coralscapes dataset; no separate original-v1 dataset or v1 pretrained model use was found in the audited final lineage. The original citation credits dataset ancestry, not an additional training pool.",
+      "original_dataset_paper": "https://arxiv.org/abs/2503.20000"
     },
     {
       "name": "SUIM TRAIN",
       "url": "https://irvlab.cs.umn.edu/image-segmentation/suim",
-      "license": "Dataset rights not independently verified; do not substitute SUIM-Net code license",
+      "license": "used for non-commercial academic research",
       "role": "Track2 external supervision and teacher completion"
     },
     {
@@ -112,14 +122,18 @@
     {
       "name": "AquaOV",
       "url": "https://github.com/LiBingyu01/Earth2Ocean",
-      "license": "Dataset license not verified",
+      "license": "used for non-commercial academic research",
       "role": "Inherited Track2 background/partial-label external supervision; not in final 5,481-image logit KD pool"
     },
     {
       "name": "SUID clean images",
-      "url": null,
-      "license": "Contributor-provided; source URL and dataset license still require confirmation",
-      "role": "Team Track2 restorer: 29 clean images plus 1,789 CoralscapesV2 TRAIN images"
+      "url": "https://ieee-dataport.org/open-access/suid-synthetic-underwater-image-dataset",
+      "license": "used for non-commercial academic research, in accordance with the dataset terms",
+      "role": "29 of the 30 clean ground-truth images (GTI) used for non-commercial academic research, in accordance with the dataset terms; Track2 contributor restorer, alongside 1,789 CoralscapesV2 TRAIN clean images",
+      "doi": "10.21227/agdr-y109",
+      "citation": "G. Hou et al., Benchmarking Underwater Image Enhancement and Restoration, and Beyond, IEEE Access 8, 122078-122091, 2020",
+      "clean_images_used": 29,
+      "total_clean_ground_truth_images": 30
     },
     {
       "name": "Depth Anything V2 Small",
@@ -179,5 +193,33 @@
     "SSIM": 0.82,
     "sharpness": 0.959
   },
-  "selection_note": "Owner confirmed T1v100/#19405. v104/#19412 matched reported metrics and is not adopted."
+  "selection_note": "Owner confirmed T1v100/#19405. v104/#19412 matched reported metrics and is not adopted.",
+  "shared_track2_lineage_disclosure": {
+    "scope": "Cross-track disclosure; DINOv3, CoralscapesV2 and SUID entries below describe Track2 training ancestry/restoration, not additional Track1 inference components.",
+    "DINOv3": {
+      "name": "DINOv3-L/16 LVD-1689M",
+      "url": "https://huggingface.co/facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "license": "DINOv3 License (Meta)",
+      "license_url": "https://github.com/facebookresearch/dinov3/blob/main/LICENSE.md",
+      "role": "Training-only frozen dense-feature teacher in Track2 v4, inherited via v5/v9 into v17 and the final student; not deployed and not part of Track1 inference",
+      "training_loss": "v4 cosine feature loss weight 0.25; training-only projections; separate from v100 SAM3 feature loss weight 0.5"
+    },
+    "SUID": {
+      "name": "SUID clean images",
+      "url": "https://ieee-dataport.org/open-access/suid-synthetic-underwater-image-dataset",
+      "doi": "10.21227/agdr-y109",
+      "citation": "G. Hou et al., Benchmarking Underwater Image Enhancement and Restoration, and Beyond, IEEE Access 8, 122078-122091, 2020",
+      "license": "used for non-commercial academic research, in accordance with the dataset terms",
+      "role": "29 of the 30 clean ground-truth images (GTI) used for non-commercial academic research, in accordance with the dataset terms; Track2 contributor restorer, alongside 1,789 CoralscapesV2 TRAIN clean images",
+      "clean_images_used": 29,
+      "total_clean_ground_truth_images": 30
+    },
+    "Coralscapes": {
+      "direct_dataset": "CoralscapesV2",
+      "url": "https://huggingface.co/datasets/josauder/coralscapesV2",
+      "original_dataset_paper": "https://arxiv.org/abs/2503.20000",
+      "license": "Apache-2.0",
+      "relationship": "Recorded direct source: josauder/coralscapesV2 TRAIN, including v17 mapped GT and contributor restoration sources. CoralscapesV2 extends the original Coralscapes dataset; no separate original-v1 dataset or v1 pretrained model use was found in the audited final lineage. The original citation credits dataset ancestry, not an additional training pool."
+    }
+  }
 }
