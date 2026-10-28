@@ -9,7 +9,7 @@
     "cuda128_mask_pixel_mismatches": 3,
     "peak_allocated_GiB": 5.597517490386963,
     "requested_torch251_GPU_verified": false,
-    "reason": "LocalRTX5080not supported byTorch2.5.1CUDA12.4; extraCUDA12.8verification is separate.",
+    "reason": "The local RTX 5080 is unsupported by PyTorch 2.5.1/CUDA 12.4; additional CUDA 12.8 verification is separate.",
     "static_missing": [
       "contact email",
       "weights HTTPS URL"
@@ -20,7 +20,10 @@
       "bytes": 3525648308,
       "url_pending": true,
       "contains_licenses": true
-    }
+    },
+    "static_errors": 2,
+    "static_warnings": 3,
+    "static_warning_explanation": "Upstream optional download functions are not called (local weights and offline run verified). Requirements pin dependencies for the explicitly requested custom Docker image."
   },
   "Track2": {
     "directory": "UW-IPL-EURS-Track2-Final",
@@ -40,7 +43,9 @@
       "confirmed final submission ID",
       "contact email"
     ],
-    "submitted_onnx_sha256": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369"
+    "submitted_onnx_sha256": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369",
+    "static_errors": 2,
+    "static_warnings": 0
   },
   "public_push": false,
   "uploaded": false,

@@ -59,7 +59,7 @@
     {
       "name": "SAM3",
       "url": "https://github.com/facebookresearch/sam3",
-      "license": "SAM License, November19 2025; bundled actual LICENSE, not MIT despite pyproject classifier",
+      "license": "SAM License, November 19, 2025; bundled actual LICENSE, not MIT despite pyproject classifier",
       "role": "Track1 frozen image/text model; Track2 logit and feature teacher"
     },
     {
@@ -84,7 +84,7 @@
       "name": "Torchvision MobileNetV2 ImageNet-1K",
       "url": "https://pytorch.org/vision/stable/models/mobilenetv2.html",
       "license": "Torchvision BSD-3-Clause code; ImageNet data terms separate",
-      "role": "Track2 first15blocks, dilated OS8, LR-ASPP head"
+      "role": "Track2 first 15 blocks, dilated OS8, LR-ASPP head"
     },
     {
       "name": "CoralscapesV2 TRAIN",
@@ -114,13 +114,13 @@
       "name": "AquaOV",
       "url": "https://github.com/LiBingyu01/Earth2Ocean",
       "license": "Dataset license not verified",
-      "role": "Inherited Track2 background/partial-label external supervision; not in final5481logitKD pool"
+      "role": "Inherited Track2 background/partial-label external supervision; not in final 5,481-image logit KD pool"
     },
     {
       "name": "SUID clean images",
       "url": null,
       "license": "Contributor-provided; source URL and dataset license still require confirmation",
-      "role": "Team Track2 restorer:29cleanimages, plus1789CoralscapesV2TRAIN"
+      "role": "Team Track2 restorer: 29 clean images plus 1,789 CoralscapesV2 TRAIN images"
     },
     {
       "name": "Depth Anything V2 Small",
@@ -155,10 +155,10 @@
   },
   "gf": 11.43190293,
   "params_m": 0.889754,
-  "inference": "Static1024square RGB; raw segmentation+learned normalizer; shared whole384x512 twice with horizontalflip/unflip/mean; no tiles and noOTHER55constant; v5StatisticalRestorerV3S+separableUSM.8; RGBguidedfilterr16then4eps.001guidepostUSM.",
+  "inference": "Static 1024-square RGB input; raw segmentation with the inherited normalizer; shared whole-image 384x512 branch evaluated twice with horizontal flip/unflip/mean. No tiles or OTHER55 blend. StatisticalRestorerV3S v5, separable USM k=0.8, two RGB guided filters r=16 then 4, epsilon=0.001, post-USM guide.",
   "metadata_input": false,
   "teacher_definition": "Track1v1 foreground scores to log-odds, background threshold, minimum winner lift for selective-fusion priority rules, per-source/path TRAIN temperature calibration; no CascadePSP hard-target mixing.",
-  "training_only_projector": "v10096->2561x1cosine0.5; removed fromexport",
+  "training_only_projector": "v100: 96-to-256 channel 1x1 projector, cosine loss weight 0.5; excluded from export",
   "training_metadata": "Filename water/depth used for teacher E034 and TRAIN synthesis only; ONNX input is RGB only.",
   "restorer_record": {
     "name": "StatisticalRestorerV3S v5",
@@ -166,5 +166,6 @@
     "recorded_epochs_completed": 8,
     "source": "contributor restoration_transfer_v5/result.json",
     "note": "Actual supplied v5 file; not the proposed v5b10epoch architecture. Same checkpoint and output as the uploaded T1/T1v100 artifacts."
-  }
+  },
+  "submitted_model_sha256": "95daf709723278a946e5416c83b45576b9a5b0ac3d989f8b85df1b4b6a0a4369"
 }
